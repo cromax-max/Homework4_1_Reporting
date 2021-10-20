@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    testImplementation 'com.codeborne:selenide:5.25.0-selenium-4.0.0-rc-2'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+}
+
+test {
+    useJUnitPlatform()
+    // gradlew test -Dselenide.headless=true
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+}
