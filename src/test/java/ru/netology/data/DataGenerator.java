@@ -1,4 +1,4 @@
-package ru.netology;
+package ru.netology.data;
 
 import com.github.javafaker.Faker;
 
@@ -19,7 +19,7 @@ public class DataGenerator {
                 faker.numerify("['+7(9##)###-##-##']"));
     }
 
-    static String date() {
+    public static String date() {
         return LocalDate.now()
                 .plusDays(new Faker().random().nextInt(3, 100))
                 .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));

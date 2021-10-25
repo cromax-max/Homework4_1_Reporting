@@ -1,12 +1,10 @@
-package ru.netology;
+package ru.netology.test;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import ru.netology.data.CardDeliveryFormData;
+import ru.netology.data.DataGenerator;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
