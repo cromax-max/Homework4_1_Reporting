@@ -23,16 +23,18 @@ public class CardDeliveryFormTest {
 
     @Test
     void shouldSubmitCardDeliveryForm() {
+        String firstMeetingDate = DataGenerator.date();
+
         $("[data-test-id='city'] input").setValue(data.getCity());
         $("[data-test-id='date'] .input__control")
                 .setValue("'\ue009' + '\ue003'")
-                .setValue(data.getDate());
+                .setValue(firstMeetingDate);
         $("[data-test-id='name'] input").setValue(data.getName());
         $("[data-test-id='phone'] input").setValue(data.getPhone());
         $("[data-test-id='agreement'] .checkbox__box").click();
         $(byText("Запланировать")).click();
         $("[data-test-id='success-notification'] .notification__content")
-                .shouldHave(text("Встреча успешно запланирована на " + data.getDate()))
+                .shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate))
                 .shouldBe(visible);
         $("[data-test-id='date'] .input__control")
                 .setValue("'\ue009' + '\ue003'")

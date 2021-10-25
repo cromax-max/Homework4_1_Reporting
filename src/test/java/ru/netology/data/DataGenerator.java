@@ -14,7 +14,6 @@ public class DataGenerator {
         Faker faker = new Faker(new Locale(locale));
         return new CardDeliveryFormData(
                 faker.address().city(),
-                date(),
                 faker.name().fullName(),
                 faker.numerify("['+7(9##)###-##-##']"));
     }

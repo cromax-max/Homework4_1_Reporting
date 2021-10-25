@@ -8,7 +8,6 @@ import lombok.Data;
 public class CardDeliveryFormData {
 
     private String city;
-    private String date;
     private String name;
     private String phone;
 }
