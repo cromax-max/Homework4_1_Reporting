@@ -1,6 +1,9 @@
 package ru.netology.test;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.data.CardDeliveryFormData;
@@ -14,6 +17,11 @@ import static com.codeborne.selenide.Selenide.*;
 public class CardDeliveryFormTest {
 
     CardDeliveryFormData data;
+
+    @BeforeAll
+    static void setUpReporting() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
 
     @BeforeEach
     void setUp() {
